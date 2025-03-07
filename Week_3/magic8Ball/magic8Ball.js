@@ -5,7 +5,7 @@ function magic8Ball(max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let reply;
+let reply; 
 let answer = magic8Ball(8, 1);
 switch (answer) {
   case 1:

@@ -5,9 +5,9 @@ Instantiate a new user and call `showInfo()`.
 */
 
 function User(username, email) {
-  this.username = username;
+  this.username = username; 
   this.email = email;
-
+ 
   this.showInfo = function () {
     console.log(`username: ${this.username}, email = ${this.email}`);
   };

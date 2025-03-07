@@ -7,7 +7,7 @@ let orderID = Date.now();
 const orderDetails = {
     orderId: orderID.toString(),
     customerName: "Beniitta",
-    pancakeType: "classic",
+    pancakeType: "classic", 
     toppingsExtras: "banana",
     deliveryMethod: "none",
     totalPrice: 10,

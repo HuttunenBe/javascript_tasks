@@ -6,7 +6,7 @@ const library = [
   { title: "Book3", author: "Anna", yearPublished: 2014 },
   { title: "Book4", author: "Amy", yearPublished: 2015 },
   { title: "Book5", author: "Anton", yearPublished: 2016 },
-];
+]; 
 
 /* Task 2 */
 

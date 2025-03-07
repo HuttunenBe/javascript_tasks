@@ -5,7 +5,7 @@ const totalPriceDisplay = document.querySelector("#totalPriceDisplay");
 const totalPriceBanner = document.querySelector("#totalPrice");
 const pancakeForm = document.querySelector("#pancakeForm");
 const deliveryCost = document.querySelectorAll(".delivery");
-const buttonSeeOrder = document.querySelector("#seeOrder");
+const buttonSeeOrder = document.querySelector("#seeOrder"); 
 const summaryText = document.querySelector("#orderSummary");
 
 const changeHandler = () => {

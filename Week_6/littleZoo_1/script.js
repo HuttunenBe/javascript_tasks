@@ -4,7 +4,7 @@ const button = document.getElementById("sortAnimals");
 const addNewAnimal = document.getElementsByClassName("add-animal");
 [0];
 
-function displayAnimals() {
+function displayAnimals() { 
   addNewAnimal.innerHTML = "";
   for (let i in animalList) {
     const newItem = document.createElement("li");

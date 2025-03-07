@@ -6,7 +6,7 @@ const weather = [
   { temperature: "-2", humidity: "87%", condition: "sunny" },
   { temperature: "-9", humidity: "67%", condition: "rainy" },
 ];
-
+ 
 weather.forEach((weather) => {
   if (weather.condition === "rainy") {
     console.log("Take an umbrella!");
