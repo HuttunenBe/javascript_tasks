@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(219, 213, 226);
+}
+
+
+h1{
+    background-color: rgb(217, 217, 222);
+    width: fit-content;
+    height: 50px;
+    color:rgb(83, 14, 74)
+
+}
+
+button {
+    background-color: rgb(236, 184, 229);
+}

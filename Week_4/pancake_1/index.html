@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pancake Maker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img src="pancake3.jpeg" alt="Delicious pancakes" />
+        <div class="price-banner"><span id="totalPrice">5€</span></div>
+      </div>
+
+      <div class="form-container">
+        <h2>Customize Your Pancake</h2>
+
+        <form id="pancakeForm">
+          <label for="type">Choose your pancake type:</label>
+          <select id="type">
+            <option value="5">Classic - 5€</option>
+            <option value="6">Chocolate - 6€</option>
+            <option value="7">Blueberry - 7€</option>
+          </select>
+
+          <h3>Select your toppings (1€ each):</h3>
+          <label
+            ><input type="checkbox" class="topping" value="1" /> Nuts</label
+          >
+          <label
+            ><input type="checkbox" class="topping" value="1" /> Bananas</label
+          >
+          <label
+            ><input type="checkbox" class="topping" value="1" /> Syrup</label
+          >
+
+          <h3>Add extras:</h3>
+          <label
+            ><input type="checkbox" class="extra" value="2" /> Whipped Cream -
+            2€</label
+          >
+          <label
+            ><input type="checkbox" class="extra" value="3" /> Ice Cream -
+            3€</label
+          >
+
+          <h3>Total Price: <span id="totalPriceDisplay">5€</span></h3>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
