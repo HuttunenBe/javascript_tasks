@@ -1,11 +1,11 @@
-function getDayName(day){
-   let answer 
-   switch (day) {
+function getDayName(day) {
+  let answer;
+  switch (day) {
     case 1:
       answer = "Monday";
       break;
     case 2:
-       answer = "Tuesday";
+      answer = "Tuesday";
       break;
     case 3:
       answer = "Wednesday";
@@ -20,11 +20,11 @@ function getDayName(day){
       answer = "Saturday";
       break;
     case 7:
-        answer = "Sunday";
-        break;
-   }
+      answer = "Sunday";
+      break;
+  }
 
-    return answer;
+  return answer;
 }
 
-    console.log (getDayName(4));
+console.log(getDayName(4));

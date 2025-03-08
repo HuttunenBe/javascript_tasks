@@ -5,9 +5,9 @@ Instantiate a new user and call `showInfo()`.
 */
 
 function User(username, email) {
-  this.username = username; 
+  this.username = username;
   this.email = email;
- 
+
   this.showInfo = function () {
     console.log(`username: ${this.username}, email = ${this.email}`);
   };
@@ -172,7 +172,7 @@ const weatherApp = {
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response not ok " + response.statusText);//incase fails
+          throw new Error("Network response not ok " + response.statusText); //incase fails
         }
         return response.json();
       })
@@ -190,7 +190,7 @@ const weatherApp = {
         });
       })
       .catch((error) => console.error("Fetching data failed:", error));
-  },//incase fails
+  }, //incase fails
 };
 
 function displayWeather(data) {
@@ -456,7 +456,7 @@ function addFox() {
   }
 }
 
-const displayFoxes = () => { 
+const displayFoxes = () => {
   let foxList = document.querySelector("#foxesList");
   foxList.innerHTML = "";
 
@@ -470,5 +470,3 @@ const displayFoxes = () => {
 
 document.querySelector("button").addEventListener("click", addFox);
 
-
-//check

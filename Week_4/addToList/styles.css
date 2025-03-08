@@ -1,20 +1,20 @@
 body {
-    background-color: rgb(157, 124, 188);
+  background-color: rgb(157, 124, 188);
 }
 
-button{
-    height: auto;
-    width: 20;
-    background-color: rgb(255, 255, 255);
+button {
+  height: auto;
+  width: 20;
+  background-color: rgb(255, 255, 255);
 }
 
 .circle {
-    background-color: rgb(235, 64, 118);
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  background-color: rgb(235, 64, 118);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

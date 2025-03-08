@@ -5,7 +5,7 @@ const student = {
   age: 20,
   grade: "B",
 };
- 
+
 const studentJSON = JSON.stringify(student);
 console.log(studentJSON);
 

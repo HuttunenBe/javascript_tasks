@@ -14,7 +14,7 @@ student = name1;
 
 console.log(student);
 
-let answer = 43; //Convertin numbers to strings
+let answer = 43; //Converting numbers to strings
 let stringanswer = answer.toString(); //convet to string
 console.log(answer);
 

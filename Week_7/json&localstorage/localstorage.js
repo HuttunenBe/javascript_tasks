@@ -7,7 +7,7 @@ console.log(message);
 /* Task 2 */
 
 const userSettings = {
-  theme: "dark", 
+  theme: "dark",
   language: "English",
 };
 

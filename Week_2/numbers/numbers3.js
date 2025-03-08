@@ -5,8 +5,8 @@ let number1 = parseFloat(num1);
 
 let number2 = parseFloat(num2);
 
-console.log (typeof number1);
-console.log (typeof number2);
+console.log(typeof number1);
+console.log(typeof number2);
 
 console.log(number1 + number2);
 

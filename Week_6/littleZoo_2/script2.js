@@ -5,7 +5,7 @@ const nameInput = document.querySelector("#newAnimalName");
 const searchInput = document.querySelector("#searchAnimal");
 const sortButton = document.querySelector("#sortAnimals");
 
-const animals = [ 
+const animals = [
   { name: "Fox", type: "Mammal", age: 10, color: "White" },
   { name: "Elephant", type: "Mammal", age: 25, color: "Grey" },
   { name: "Eagle", type: "Bird", age: 5, color: "Brown" },
@@ -44,9 +44,6 @@ const addAnimal = () => {
     animals.push(newAnimal);
     displayAnimals(animals);
     document.querySelector("#newAnimalName").value = "";
-
-
-    
   }
 };
 
@@ -54,7 +51,6 @@ document.querySelector("#newAnimalName").value = "";
 document.querySelector("#newAnimalType").value = "";
 document.querySelector("#newAnimalAge").value = "";
 document.querySelector("#newAnimalColor").value = ""; //remeber to clean!
-
 
 const searchAnimal = () => {
   const searchText = searchInput.value.toLowerCase();
@@ -89,5 +85,3 @@ sortButton.addEventListener("click", sortAnimals);
 filterType.addEventListener("change", filterByTypeAnimal);
 
 displayAnimals(animals);
-
-

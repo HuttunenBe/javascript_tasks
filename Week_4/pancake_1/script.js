@@ -35,7 +35,7 @@ const calculateTotal = () => {
   totalPriceDisplay.textContent = `${totalPrice} €`;
   totalPriceBanner.textContent = `${totalPrice} €`;
 
-  textColor()
+  textColor();
 };
 
-pancakeForm.addEventListener("change", calculateTotal)
+pancakeForm.addEventListener("change", calculateTotal);

@@ -1,7 +1,6 @@
 function getLenght(str) {
-    return str.length;
+  return str.length;
 }
 
-str = 'Javascript'
-console.log(getLenght('Javascript'));
-
+str = "Javascript";
+console.log(getLenght("Javascript"));

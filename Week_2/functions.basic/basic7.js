@@ -1,6 +1,5 @@
 const containsWord = (sentence, word) => {
-    return sentence.includes(word);
-}
+  return sentence.includes(word);
+};
 
-
-console.log (containsWord('Javascript word more is fun!', 'fffun!'));
+console.log(containsWord("Javascript word more is fun!", "fffun!"));
