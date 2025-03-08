@@ -1,8 +1,7 @@
 const animalList = ["pig", "cat", "horse", "fish", "guinea pig"];
 const input = document.getElementById("animalInput");
 const button = document.getElementById("sortAnimals");
-const addNewAnimal = document.getElementsByClassName("add-animal");
-[0];
+const addNewAnimal = document.getElementsByClassName("add-animal")[0]; 
 
 function displayAnimals() { 
   addNewAnimal.innerHTML = "";
@@ -16,10 +15,10 @@ function displayAnimals() {
 function updateAnimalList() {
   const newItem = document.createElement("li");
   newItem.textContent = input.value;
-  list.appendChild(newItem);
-  input.value = "";
+  addNewAnimal.appendChild(newItem); 
+  input.value = ""; 
 }
 
 button.addEventListener("click", updateAnimalList);
 
-displayAnimals();
+displayAnimals(); 

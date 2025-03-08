@@ -9,21 +9,24 @@ console.log(textExample1.textContent)
 //console.log(textExample3.textContent)
 //console.log(textExample4[2].textContent)
 
-
-
-
-
+textExample4.forEach((element) => {
+  console.log(element.textContent); 
+});
 
 
 
 //selector
-//const button = document.getElementById("insertBtn");
-//const myinput = document.getElementById("myInput");
-//const text = document.getElementById("result");
+const button = document.getElementById("insertBtn");
+const myinput = document.getElementById("myInput");
+const text = document.getElementById("result");
 // const text = document.querySelector("#insertBtn");
 // const text = document.querySelector("header p .myclass");
 // const text = document.querySelector("div");
 
+
+button.addEventListener('click', () => {
+  result.textContent = myInput.value;
+})
 
 //function
 // const handleClick = () => {
