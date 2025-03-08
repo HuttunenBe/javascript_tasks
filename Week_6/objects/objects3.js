@@ -456,7 +456,7 @@ function addFox() {
   }
 }
 
-const displayFoxes = () => {
+const displayFoxes = () => { 
   let foxList = document.querySelector("#foxesList");
   foxList.innerHTML = "";
 
@@ -469,3 +469,6 @@ const displayFoxes = () => {
 };
 
 document.querySelector("button").addEventListener("click", addFox);
+
+
+//check
