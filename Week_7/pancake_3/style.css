@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(111, 99, 122);
+}
+
+.container{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+}
