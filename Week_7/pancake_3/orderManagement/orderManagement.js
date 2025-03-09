@@ -1,6 +1,6 @@
 const orderListContainer = document.querySelector("#orderDiv");
 
-const orders = JSON.parse(localStorage.getItem("orders")) || [];
+const orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
 const addNewOrder = (customerName, pancakeType, selectedToppings, selectedExtras,selectedDelivery, totalPrice
 ) => {
   const newOrder = {
@@ -15,7 +15,7 @@ const addNewOrder = (customerName, pancakeType, selectedToppings, selectedExtras
   };
 
   orders.push(newOrder);
-  localStorage.setItem("orders", JSON.stringify(orders));
+  localStorage.setItem("ordersNew", JSON.stringify(orders));
   displayOrders(); 
 }
 
@@ -68,7 +68,7 @@ const updateOrderStatus = (orderId, newStatus) => {
   const orderToUpdate = orders.find((order) => order.id == orderId);
   if (orderToUpdate) {
     orderToUpdate.status = newStatus;
-    localStorage.setItem("orders", JSON.stringify(orders));
+    localStorage.setItem("ordersNew", JSON.stringify(orders));
     displayOrders();
   }
 };

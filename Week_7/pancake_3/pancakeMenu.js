@@ -107,9 +107,9 @@ buttonOrderNow.addEventListener("click", () => {
     };
   
 
-let orders = JSON.parse(localStorage.getItem("orders")) || [];
+let orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
 orders.push(newOrder);
-localStorage.setItem("orders", JSON.stringify(orders));
+localStorage.setItem("ordersNew", JSON.stringify(orders));
 
 alert("Your order has been placed!");
   
