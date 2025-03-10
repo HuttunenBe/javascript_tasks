@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(111, 99, 122);
+}
+
+.container{
+    background-color: aliceblue;
+    display: flex;
+    height: 100px;
+    justify-content: left;
+    flex-direction: column;
+    gap: 2rem;
+}
