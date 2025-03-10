@@ -6,7 +6,7 @@ const totalPriceBanner = document.querySelector("#totalPrice");
 const pancakeForm = document.querySelector("#pancakeForm");
 const deliveryCost = document.querySelectorAll(".delivery");
 const buttonSeeOrder = document.querySelector("#seeOrder");
-const buttonOrderNow = document.querySelector("#orderButton"); 
+const buttonOrderNow = document.querySelector("#orderButton");
 const summaryText = document.querySelector("#orderSummary");
 const customerName = document.querySelector("#customerName");
 
@@ -76,45 +76,44 @@ buttonSeeOrder.addEventListener("click", () => {
     selectedDelivery.length > 0 ? selectedDelivery.join(", ") : "None";
 
   const customerOrderName = customerName.value.trim();
-  
+
   summaryText.textContent = `Hello ${customerOrderName}. 
   You chose ${pancakeType.value} with the following options:
   Toppings: ${toppingsText}, 
   Extras: ${extrasText}, 
   Delivery: ${deliveryText}. 
-  
   Total price: ${totalPrice} €`;
 });
+
 buttonOrderNow.addEventListener("click", () => {
-    const {
-      basePrice,
-      selectedToppings,
-      selectedExtras,
-      selectedDelivery,
-      totalPrice,
-    } = changeHandler();
-  
-    const customerOrderName = customerName.value.trim();
-    const newOrder = {
-      id: Date.now(), 
-      customerName: customerOrderName,
-      selectedPancake: pancakeType.value,
-      toppings: selectedToppings,
-      extras: selectedExtras,
-      deliveryMethod: selectedDelivery,
-      totalPrice: totalPrice,
-      status: "waiting", 
-    };
-  
+  const {
+    basePrice,
+    selectedToppings,
+    selectedExtras,
+    selectedDelivery,
+    totalPrice,
+  } = changeHandler();
 
-let orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
-orders.push(newOrder);
-localStorage.setItem("ordersNew", JSON.stringify(orders));
+  const customerOrderName = customerName.value.trim();
+  const newOrder = {
+    id: Date.now(),
+    customerName: customerOrderName,
+    selectedPancake: pancakeType.value,
+    toppings: selectedToppings,
+    extras: selectedExtras,
+    deliveryMethod: selectedDelivery,
+    totalPrice: totalPrice,
+    status: "waiting",
+  };
 
-alert("Thank you for your order!");
-  
-summaryText.textContent = "";
-pancakeForm.reset();
-totalPriceDisplay.textContent = "0 €"; 
-totalPriceBanner.textContent = "0 €"; 
-  });
+  let orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
+  orders.push(newOrder);
+  localStorage.setItem("ordersNew", JSON.stringify(orders));
+
+  alert("Thank you for your order!");
+
+  summaryText.textContent = "";
+  pancakeForm.reset();
+  totalPriceDisplay.textContent = "0 €";
+  totalPriceBanner.textContent = "0 €";
+});
