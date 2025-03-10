@@ -111,7 +111,7 @@ let orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
 orders.push(newOrder);
 localStorage.setItem("ordersNew", JSON.stringify(orders));
 
-alert("Your order has been placed!");
+alert("Thank you for your order!");
   
 summaryText.textContent = "";
 pancakeForm.reset();
