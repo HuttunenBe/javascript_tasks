@@ -1,52 +1,59 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body {
+  font-family: 'Poppins', sans-serif; 
+  background-color: #f3cff3;
+  background-image: url("https://images.pexels.com/photos/4553125/pexels-photo-4553125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  font-family: "raleway";
 }
 
 h1 {
   font-size: 3rem;
+  color: #000000;
+  margin-bottom: 20px; 
 }
 
-body {
-  background-color: #e2cfe2;
-  font-family: "poppins";
-  line-height: 1.2;
+#orderDiv {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; 
+}
+
+.order {
+  background-color: #fff;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  margin: 8%;
-  font-size: 1rem;
-
-  min-height: 100vh;
+  border: #ffffff solid;
+  width: 250px; 
+  box-sizing: border-box; 
 }
 
-#ticketContainer {
-  width: 250px;
+.order p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: black;
 }
 
-.ticket {
-  background-color: rgb(255, 255, 255);
-  border: 3px solid #000000;
-
-  padding: 15px;
-  border-radius: 10px;
-  text-align: left;
-  font-size: 1rem;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-
-  width: 200x;
-  margin: 5%;
-  line-height: 2;
+.order .orderStatus {
+  max-width: 200px;
+  width: 100%;
 }
 
-#sortOrders {
-  background-color: #dcafd9;
-  border-radius: 20px;
-  cursor: pointer;
+.order p:nth-child(1){
+  font-weight: bold;
+  color: #443643;
+  font-size: 20px;
+}
+
+.order p:nth-child(2) {
+  font-weight: bold;
+  color: #7b2f76;
 }

@@ -1,18 +1,14 @@
-const orderListContainer = document.querySelector("#ticketContainer");
-const sortButton = document.querySelector("#sortOrders");
-const searchButton = document.querySelector("#searchOrder");
+const orderListContainer = document.querySelector("#orderDiv");
+/*const filteredOrders = document.querySelector("#orderStatus")
+const sortButton = document.querySelector("#sortButton");*/
+
+
 
 const orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
-const addNewOrder = (
-  customerName,
-  pancakeType,
-  selectedToppings,
-  selectedExtras,
-  selectedDelivery,
-  totalPrice
+const addNewOrder = (customerName, pancakeType, selectedToppings, selectedExtras,selectedDelivery, totalPrice
 ) => {
   const newOrder = {
-    id: id,
+    id: generatedId,
     customerName: customerName,
     selectedPancake: pancakeType,
     toppings: selectedToppings,
@@ -24,8 +20,8 @@ const addNewOrder = (
 
   orders.push(newOrder);
   localStorage.setItem("ordersNew", JSON.stringify(orders));
-  displayOrders();
-};
+  displayOrders(); 
+}
 
 const getEmoji = (status) => {
   if (status === "waiting") {
@@ -37,8 +33,24 @@ const getEmoji = (status) => {
   }
 };
 
+
+/*const sortOrders = () => {
+  const selectedType = filteredOrders.value;
+
+  if (selectedType === "All") {
+    displayOrders(orders); 
+  } else {
+    const filteredOrders = orders.filter(
+      (order) => order.status === selectedType
+    );
+    displayOrders(filteredOrders); 
+  }
+};*/
+
 const displayOrders = () => {
   orderListContainer.innerHTML = "";
+
+
 
   orders.forEach((order) => {
     const orderEmoji = getEmoji(order.status);
@@ -70,6 +82,7 @@ const displayOrders = () => {
   });
 };
 
+
 const updateOrderStatus = (orderId, newStatus) => {
   const orderToUpdate = orders.find((order) => order.id == orderId);
   if (orderToUpdate) {
@@ -87,20 +100,9 @@ orderListContainer.addEventListener("change", (e) => {
   }
 });
 
-const sortOrders = () => {
-  orders.sort((a, b) => a.name.localeCompare(b.name));
-  displayOrders(orders);
-};
 
-const searchOrders = () => {
-  const searchText = searchInput.value.toLowerCase();
-  const filteredOrders = orders.filter((order) =>
-    order.name.toLowerCase().includes(searchText)
-  );
 
-  displayOrders(searchOrders);
-};
+/*sortButton.addEventListener("click", sortOrders);*/
+
 
 displayOrders();
-searchButton.addEventListener("input", searchOrder);
-sortButton.addEventListener("click", sortOrders);
