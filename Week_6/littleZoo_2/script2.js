@@ -4,6 +4,7 @@ const animalButton = document.querySelector("#addAnimal");
 const nameInput = document.querySelector("#newAnimalName");
 const searchInput = document.querySelector("#searchAnimal");
 const sortButton = document.querySelector("#sortAnimals");
+//const deleteButton =  document.querySelector("#delete")
 
 const animals = [
   { name: "Fox", type: "Mammal", age: 10, color: "White" },

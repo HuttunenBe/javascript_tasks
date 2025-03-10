@@ -1,3 +1,10 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 body {
   background-color: #c5cac1;
   color: #000000;
@@ -24,7 +31,7 @@ body {
 
 .image-container img {
   object-fit: cover;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -35,7 +42,7 @@ body {
   overflow-y: auto;
 }
 
-.price-banner {
+/*.price-banner {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -49,15 +56,15 @@ body {
   align-items: center;
   font-size: 25px;
   border-radius: 15%;
-}
+}*/
 
 h3 {
   margin-top: 15px;
 }
 
-input[type="checkbox"] {
-  margin-right: 5px;
-}
+/*input[type="checkbox"] {
+  margin-right: 10px;*/
+
 
 select,
 label {
