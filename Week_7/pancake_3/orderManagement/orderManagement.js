@@ -1,11 +1,17 @@
 const orderListContainer = document.querySelector("#orderDiv");
+
 /*const filteredOrders = document.querySelector("#orderStatus")
 const sortButton = document.querySelector("#sortButton");*/
-
-
+/*const searchInput = document.querySelector("#searchAnimal");*/
 
 const orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
-const addNewOrder = (customerName, pancakeType, selectedToppings, selectedExtras,selectedDelivery, totalPrice
+const addNewOrder = (
+  customerName,
+  pancakeType,
+  selectedToppings,
+  selectedExtras,
+  selectedDelivery,
+  totalPrice
 ) => {
   const newOrder = {
     id: generatedId,
@@ -20,8 +26,8 @@ const addNewOrder = (customerName, pancakeType, selectedToppings, selectedExtras
 
   orders.push(newOrder);
   localStorage.setItem("ordersNew", JSON.stringify(orders));
-  displayOrders(); 
-}
+  displayOrders();
+};
 
 const getEmoji = (status) => {
   if (status === "waiting") {
@@ -32,7 +38,6 @@ const getEmoji = (status) => {
     return "🟢";
   }
 };
-
 
 /*const sortOrders = () => {
   const selectedType = filteredOrders.value;
@@ -49,9 +54,6 @@ const getEmoji = (status) => {
 
 const displayOrders = () => {
   orderListContainer.innerHTML = "";
-
-
-
   orders.forEach((order) => {
     const orderEmoji = getEmoji(order.status);
     orderListContainer.innerHTML += `
@@ -77,11 +79,27 @@ const displayOrders = () => {
             </select>
           </p>
           <p>Status Emoji: ${orderEmoji}</p> 
+          <button class="deleteButton">Delete</button>
       </div>
     `;
   });
-};
 
+const deleteButtons = document.querySelectorAll(".deleteButton");
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", deleteItem);
+});}
+;
+
+function deleteItem(event) {
+  const orderId = event.target.closest("div").dataset.orderId;
+  const index = orders.findIndex(order => order.id == orderId);
+  
+  if (index !== -1) {
+    orders.splice(index, 1);  
+    localStorage.setItem("ordersNew", JSON.stringify(orders)); 
+    displayOrders(); 
+  }
+}
 
 const updateOrderStatus = (orderId, newStatus) => {
   const orderToUpdate = orders.find((order) => order.id == orderId);
@@ -102,7 +120,5 @@ orderListContainer.addEventListener("change", (e) => {
 
 
 
-/*sortButton.addEventListener("click", sortOrders);sa*/
-
-
 displayOrders();
+
