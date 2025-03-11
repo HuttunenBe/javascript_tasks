@@ -4,7 +4,7 @@ const animalButton = document.querySelector("#addAnimal");
 const nameInput = document.querySelector("#newAnimalName");
 const searchInput = document.querySelector("#searchAnimal");
 const sortButton = document.querySelector("#sortAnimals");
-//const deleteButton =  document.querySelector("#delete")
+const filterType = document.querySelector("#filterType");
 
 const animals = [
   { name: "Fox", type: "Mammal", age: 10, color: "White" },
@@ -21,9 +21,26 @@ const displayAnimals = (animalArray) => {
   animalList.innerHTML = ""; //will clean the ul
   for (const animal of animalArray) {
     //const element of object
-    const li = document.createElement("li");
-    li.textContent = `Name: ${animal.name}, Type: ${animal.type}, Age: ${animal.age}, Color: ${animal.color}`;
-    animalList.appendChild(li);
+  const li = document.createElement("li");
+  li.textContent = `Name: ${animal.name}, Type: ${animal.type}, Age: ${animal.age}, Color: ${animal.color}`;
+
+
+
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+deleteButton.addEventListener("click", () => deleteAnimal(animal)); 
+
+li.appendChild(deleteButton);
+animalList.appendChild(li);
+}
+};
+
+const deleteAnimal = (animalToDelete) => {
+const index = animals.indexOf(animalToDelete);
+  if (index !== -1) {
+    animals.splice(index, 1);
+
+    displayAnimals(animals);
   }
 };
 
