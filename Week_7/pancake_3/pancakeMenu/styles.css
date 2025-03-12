@@ -14,7 +14,6 @@ body {
   min-height: 100vh;
   font-family: "raleway";
   line-height: 1.5;
-  
 }
 
 .container {
@@ -33,7 +32,7 @@ body {
 .image-container img {
   object-fit: cover;
   width: 50vw;
-  height: 100vh;
+  height: 120vh;
 }
 
 .form-container {
@@ -44,9 +43,9 @@ body {
 }
 
 .price-banner {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  top: 2%;
+  right: 52%;
   background-color: #ececec;
   color: rgb(0, 0, 0);
   border-radius: 50%;
@@ -56,30 +55,78 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin-bottom: 6%;
+  font-size: 2rem;
 }
 
 h3 {
   margin-top: 15px;
+  margin-bottom: 2%;
 }
 
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 12%;
+}
+
+input,
 select,
-label {
-  display: block;
-  margin-top: 10px;
-  padding: 1px;
+button {
+  padding: 10px;
+  margin: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fff;
+  border: #e2cfe2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #orderButton {
   background-color: #dcafd9;
-  border-radius: 20px;
-  padding: 8px;
+  padding: 10px;
+  margin: 12px;
+  border: #dcafd9;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transfrom 0.2s ease;
 }
 
 #seeOrder {
   background-color: #dcafd9;
-  border-radius: 20px;
-  padding: 8px;
+  padding: 10px;
+  border: #dcafd9;
+  margin: 12px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#orderButton:hover {
+  transform: scale(1.1);
 }
 
+#orderButton:active {
+  transform: scale(1.05);
+}
+
+#seeOrder:hover {
+  transform: scale(1.1);
+}
+
+#seeOrder:active {
+  transform: scale(1.05);
+}

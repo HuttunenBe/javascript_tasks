@@ -1,45 +1,51 @@
 body {
-  font-family: 'Poppins', sans-serif; 
-  background-color: #f3cff3;
-  background-image: url("https://images.pexels.com/photos/4553125/pexels-photo-4553125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-color: #274e46;
+  background-image: url("https://images.pexels.com/photos/6947066/pexels-photo-6947066.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-  font-family: "raleway";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #000000;
 }
+
+
 
 h1 {
   font-size: 3rem;
-  color: #000000;
-  margin-bottom: 20px; 
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 #orderDiv {
   width: 100%;
   max-width: 1000px;
   padding: 20px;
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 20px; 
-  justify-content: center; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .order {
-  background-color: #fff;
+  background-color: #ffffffdf;
   border-radius: 25px;
   margin-bottom: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  border: #ffffff solid;
-  width: 250px; 
-  box-sizing: border-box; 
+  width: 250px;
+  box-sizing: border-box;
 }
+
 
 .order p {
   margin: 5px 0;
   font-size: 16px;
   color: black;
+  line-height: 1.5;
 }
 
 .order .orderStatus {
@@ -47,7 +53,7 @@ h1 {
   width: 100%;
 }
 
-.order p:nth-child(1){
+.order p:nth-child(1) {
   font-weight: bold;
   color: #443643;
   font-size: 20px;
@@ -56,4 +62,36 @@ h1 {
 .order p:nth-child(2) {
   font-weight: bold;
   color: #7b2f76;
+  margin-bottom: 7%;
+}
+
+.order p:nth-child(8) {
+  margin-top: 7%;
+  margin-bottom: 5%;
+  color: #7b2f76;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+input,
+select,
+button {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+button {
+  background-color: #355753;
+  color: #fff;
+  cursor: pointer;
+  border: #355753;
+}
+
+button:hover {
+  background-color: #2d4a45;
+  transform: scale(1.1);
 }

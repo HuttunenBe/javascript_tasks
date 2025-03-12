@@ -15,6 +15,8 @@ const changeHandler = () => {
     document.getElementById("type").selectedOptions[0].dataset.price
   );
 
+
+
   let selectedToppings = [];
   let selectedExtras = [];
   let selectedDelivery = [];
@@ -117,3 +119,5 @@ buttonOrderNow.addEventListener("click", () => {
   totalPriceDisplay.textContent = "0 €";
   totalPriceBanner.textContent = "0 €";
 });
+
+pancakeForm.addEventListener("change", changeHandler);
