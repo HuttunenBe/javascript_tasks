@@ -1,8 +1,6 @@
 const orderListContainer = document.querySelector("#orderDiv");
-
-/*const filteredOrders = document.querySelector("#orderStatus")
-const sortButton = document.querySelector("#sortButton");*/
-/*const searchInput = document.querySelector("#searchAnimal");*/
+const orderStatus = document.querySelector("#filterStatus");
+const searchInput = document.querySelector("#searchInput");
 
 const orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
 const addNewOrder = (
@@ -14,7 +12,7 @@ const addNewOrder = (
   totalPrice
 ) => {
   const newOrder = {
-    id: generatedId,
+    id: id,
     customerName: customerName,
     selectedPancake: pancakeType,
     toppings: selectedToppings,
@@ -26,7 +24,7 @@ const addNewOrder = (
 
   orders.push(newOrder);
   localStorage.setItem("ordersNew", JSON.stringify(orders));
-  displayOrders();
+  displayOrders(orders);
 };
 
 const getEmoji = (status) => {
@@ -39,20 +37,19 @@ const getEmoji = (status) => {
   }
 };
 
-/*const sortOrders = () => {
-  const selectedType = filteredOrders.value;
-
-  if (selectedType === "All") {
-    displayOrders(orders); 
+const sortOrders = () => {
+  const selectedType = orderStatus.value;
+  if (selectedType === "waiting") {
+    displayOrders(orders);
   } else {
     const filteredOrders = orders.filter(
       (order) => order.status === selectedType
     );
-    displayOrders(filteredOrders); 
+    displayOrders(filteredOrders);
   }
-};*/
+};
 
-const displayOrders = () => {
+const displayOrders = (orders) => {
   orderListContainer.innerHTML = "";
   orders.forEach((order) => {
     const orderEmoji = getEmoji(order.status);
@@ -84,20 +81,20 @@ const displayOrders = () => {
     `;
   });
 
-const deleteButtons = document.querySelectorAll(".deleteButton");
-deleteButtons.forEach((button) => {
-  button.addEventListener("click", deleteItem);
-});}
-;
+  const deleteButtons = document.querySelectorAll(".deleteButton");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", deleteItem);
+  });
+};
 
 function deleteItem(event) {
   const orderId = event.target.closest("div").dataset.orderId;
-  const index = orders.findIndex(order => order.id == orderId);
-  
+  const index = orders.findIndex((order) => order.id == orderId);
+
   if (index !== -1) {
-    orders.splice(index, 1);  
-    localStorage.setItem("ordersNew", JSON.stringify(orders)); 
-    displayOrders(); 
+    orders.splice(index, 1);
+    localStorage.setItem("ordersNew", JSON.stringify(orders));
+    displayOrders(orders);
   }
 }
 
@@ -106,7 +103,7 @@ const updateOrderStatus = (orderId, newStatus) => {
   if (orderToUpdate) {
     orderToUpdate.status = newStatus;
     localStorage.setItem("ordersNew", JSON.stringify(orders));
-    displayOrders();
+    displayOrders(orders);
   }
 };
 
@@ -118,6 +115,33 @@ orderListContainer.addEventListener("change", (e) => {
   }
 });
 
+const filterByStatus = () => {
+  const selectedType = orderStatus.value;
+  if (selectedType === "waiting") {
+    displayOrders(orders);
+  } else {
+    const filteredOrders = orders.filter(
+      (order) => order.status === selectedType
+    );
+    displayOrders(filteredOrders);
+  }
+};
 
+const searchOrderbyID = () => {
+  const searchId = searchInput.value;
+  const filteredOrders = orders.filter((order) =>
+    order.id.toString().includes(searchId)
+  );
+  displayOrders(filteredOrders);
+};
 
-displayOrders();
+window.onload = () => {
+  const filteredOrders = orders.filter((order) =>
+    ["waiting", "ready", "delivered"].includes(order.status)
+  );
+
+  displayOrders(filteredOrders);
+};
+
+orderStatus.addEventListener("change", filterByStatus);
+searchInput.addEventListener("input", searchOrderbyID);
