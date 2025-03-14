@@ -15,7 +15,7 @@ weather.forEach((weather) => {
 
 /* Task 2*/
 
-const shoppinCart = {
+const shoppingCart = {
   items: [
     {
       name: "Banana",
@@ -43,7 +43,7 @@ const calculateTotal = (items) => {
   return totalPrice;
 };
 
-console.log(calculateTotal(shoppinCart.items));
+console.log(calculateTotal(shoppingCart.items));
 
 /* Task 3 */
 
@@ -63,15 +63,15 @@ restaurants.forEach((restaurant) => {
 /* Task 4 */
 
 const bankAccount = [
-  { accountHolder: "Max", balance: 10200, trasaction: 2000 },
-  { accountHolder: "Minni", balance: 12303, trasaction: -2000 },
-  { accountHolder: "Manu", balance: 23034, trasaction: 2000 },
-  { accountHolder: "Misa", balance: 202344, trasaction: 2000 },
+  { accountHolder: "Max", balance: 10200, transaction: 2000 },
+  { accountHolder: "Minni", balance: 12303, transaction: -2000 },
+  { accountHolder: "Manu", balance: 23034, transaction: 2000 },
+  { accountHolder: "Misa", balance: 202344, transaction: 2000 },
 ];
 const calculator = (accounts) => {
   let totalBalance = 0;
   accounts.forEach((account) => {
-    totalBalance += account.balance + account.trasaction;
+    totalBalance += account.balance + account.transaction;
   });
   return totalBalance;
 };
@@ -276,11 +276,11 @@ const airports = [
   },
 ];
 
-function mostFlights(arr) {
-  let max = arr[0];
+function mostFlights(airportList) {
+  let max = airportList[0];
 
-  for (let i = 1; i < arr.length; i++)
-    if (arr[i].fligthsPerDay > max.fligtsPerDay) max = arr[i];
+  for (let i = 1; i < airportList.length; i++)
+    if (airportList[i].fligthsPerDay > max.fligtsPerDay) max = airportList[i];
 
   return max;
 }

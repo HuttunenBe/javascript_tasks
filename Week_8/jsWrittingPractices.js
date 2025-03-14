@@ -79,6 +79,8 @@ function checkNumber(number) {
 
 checkNumber(5);
 
+
+
 /* Task 8: Fix Formatting*/
 function example() {
   let x = 10;

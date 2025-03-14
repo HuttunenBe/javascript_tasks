@@ -17,7 +17,6 @@ if (email.value === "") {
     messages.push("Email is required");
     }
 
-    
 
 if (messages.length > 0) {
     e.preventDefault();

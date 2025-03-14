@@ -97,6 +97,8 @@ const sortAnimals = () => {
   displayAnimals(animals);
 };
 
+
+
 animalButton.addEventListener("click", addAnimal);
 searchInput.addEventListener("input", searchAnimal);
 sortButton.addEventListener("click", sortAnimals);

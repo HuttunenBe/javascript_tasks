@@ -188,9 +188,7 @@ const studentList = [
 ];
 
 function getTopStudents(studentList) {
-  return studentList
-    .filter((student) => student.score > 80)
-    .map((student) => student.name);
+  return studentList.filter((student) => student.score > 80).map((student) => student.name);
 }
 
 console.log(getTopStudents(studentList));

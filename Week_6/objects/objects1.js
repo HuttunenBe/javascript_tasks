@@ -100,11 +100,11 @@ const moped = {
   brand: "Aprilia",
   model: "SX",
   year: 2014,
-  isElectric: "yes",
+  isElectric: "true",
 };
 
 let electrical = (isElectric) => {
-  if (isElectric === "yes") {
+  if (moped.isElectric === "true") { //if (moped.isElectric) simplified
     console.log("This moped is eco-friendly!");
   } else {
     console.log("This moped runs on fuel");
@@ -235,10 +235,10 @@ ageCheck();
 /* Task 15 */
 
 const employees = [
-  { name: "Max", position: "Employee", salary: 2000 },
-  { name: "Masa", position: "Employee", salary: 19930 },
-  { name: "Mikko", position: "Employee", salary: 20140 },
-  { name: "Mika", position: "Employee", salary: 20150 },
+  { name: "Max", position: "Employee", salary: 2306 },
+  { name: "Masa", position: "Employee", salary: 2050 },
+  { name: "Mikko", position: "Employee", salary: 2500 },
+  { name: "Mika", position: "Employee", salary: 2010 },
 ];
 
 function calculator(employees) {
@@ -249,4 +249,4 @@ function calculator(employees) {
   return result;
 }
 
-console.log("$" + calculator(employees));
+console.log("€" + calculator(employees));

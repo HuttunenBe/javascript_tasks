@@ -9,3 +9,4 @@ function checkFoxLover(age, likesFoxes) {
 checkFoxLover(18, false);
 checkFoxLover(20, true);
 checkFoxLover(11, true);
+
