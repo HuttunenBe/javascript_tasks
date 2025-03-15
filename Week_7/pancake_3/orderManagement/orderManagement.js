@@ -88,11 +88,11 @@ function deleteItem(event) {
   const orderId = event.target.closest("div").dataset.orderId;
   const index = orders.findIndex((order) => order.id == orderId);
 
-  if (index !== -1 && orders[index].status === "delivered") {
+  if (index !== -1 && orders.status === "delivered") {
     orders.splice(index, 1);
     localStorage.setItem("ordersNew", JSON.stringify(orders));
     displayOrders(orders);
-  }
+  } //does not work
 }
 
 const updateOrderStatus = (orderId, newStatus) => {
