@@ -11,17 +11,18 @@
   </head>
   <body>
     <section>
+      <container>
       <h1>Order details</h1>
-      <input type="search" id="searchInput" placeholder="Search by id..." />
-    </section>
+      <input type="search" id="search" placeholder="Search by id..." />
     <select id="filterStatus">
+      <option value="all">All</option>
       <option value="waiting">Waiting</option>
       <option value="ready">Ready</option>
       <option value="delivered">Delivered</option>
     </select>
-    <button id="sortOrdersButton">Sort</button>
+    </section></container>
     <div id="orderDiv">
-      <div class="controls">
+      <div class="controls"></div>
     
     <script src="orderManagement.js"></script>
   </body>

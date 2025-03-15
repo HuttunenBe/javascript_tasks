@@ -1,6 +1,6 @@
 const orderListContainer = document.querySelector("#orderDiv");
 const orderStatus = document.querySelector("#filterStatus");
-const searchInput = document.querySelector("#searchInput");
+const searchInput = document.querySelector("#search");
 
 const orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
 const addNewOrder = (
@@ -37,17 +37,14 @@ const getEmoji = (status) => {
   }
 };
 
+
+
 const sortOrders = () => {
-  const selectedType = orderStatus.value;
-  if (selectedType === "waiting") {
+  orders.sort((a, b) => 
+    b.status.localeCompare(a.status)); 
     displayOrders(orders);
-  } else {
-    const filteredOrders = orders.filter(
-      (order) => order.status === selectedType
-    );
-    displayOrders(filteredOrders);
   }
-};
+  
 
 const displayOrders = (orders) => {
   orderListContainer.innerHTML = "";
@@ -91,7 +88,7 @@ function deleteItem(event) {
   const orderId = event.target.closest("div").dataset.orderId;
   const index = orders.findIndex((order) => order.id == orderId);
 
-  if (index !== -1) {
+  if (index !== -1 && orders[index].status === "delivered") {
     orders.splice(index, 1);
     localStorage.setItem("ordersNew", JSON.stringify(orders));
     displayOrders(orders);
@@ -117,7 +114,7 @@ orderListContainer.addEventListener("change", (e) => {
 
 const filterByStatus = () => {
   const selectedType = orderStatus.value;
-  if (selectedType === "waiting") {
+  if (selectedType === "all") {
     displayOrders(orders);
   } else {
     const filteredOrders = orders.filter(
@@ -128,20 +125,21 @@ const filterByStatus = () => {
 };
 
 const searchOrderbyID = () => {
-  const searchId = searchInput.value;
+  const searchId = searchInput.value.trim();
   const filteredOrders = orders.filter((order) =>
     order.id.toString().includes(searchId)
   );
   displayOrders(filteredOrders);
 };
 
-window.onload = () => {
-  const filteredOrders = orders.filter((order) =>
-    ["waiting", "ready", "delivered"].includes(order.status)
-  );
 
-  displayOrders(filteredOrders);
+window.onload = () => {
+  sortOrders(); 
+displayOrders(orders)
 };
+
+
 
 orderStatus.addEventListener("change", filterByStatus);
 searchInput.addEventListener("input", searchOrderbyID);
+
