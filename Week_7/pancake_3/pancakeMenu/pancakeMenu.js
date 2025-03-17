@@ -16,7 +16,6 @@ const changeHandler = () => {
   );
 
 
-
   let selectedToppings = [];
   let selectedExtras = [];
   let selectedDelivery = [];
@@ -97,6 +96,9 @@ buttonOrderNow.addEventListener("click", () => {
   } = changeHandler();
 
   const customerOrderName = customerName.value.trim();
+  if (customerOrderName == ""){
+    alert("Please input a name")
+  }else{
   const newOrder = {
     id: Date.now(),
     customerName: customerOrderName,
@@ -118,6 +120,11 @@ buttonOrderNow.addEventListener("click", () => {
   pancakeForm.reset();
   totalPriceDisplay.textContent = "0 €";
   totalPriceBanner.textContent = "0 €";
-});
+}});
 
 pancakeForm.addEventListener("change", changeHandler);
+
+
+filterType.addEventListener("change", filterByTypeAnimal);
+
+
