@@ -35,17 +35,16 @@ console.log(initials);
 
 /* Task 5 */
 
-
 const stock = (products) => {
-    return products
-        .filter(product => product.stock > 0).map(product => product.name.toUpperCase())    
-        .join(", ");                                   
+  return products
+    .filter((product) => product.stock > 0)
+    .map((product) => product.name.toUpperCase())
+    .join(", ");
 };
 
 const products = [
-    { name: "Laptop", stock: 10 },
-    { name: "Phone", stock: 0 }
+  { name: "Laptop", stock: 10 },
+  { name: "Phone", stock: 0 },
 ];
-
 
 console.log(stock(products));
