@@ -37,14 +37,10 @@ const getEmoji = (status) => {
   }
 };
 
-
-
 const sortOrders = () => {
-  orders.sort((a, b) => 
-    b.status.localeCompare(a.status)); 
-    displayOrders(orders);
-  }
-  
+  orders.sort((a, b) => b.status.localeCompare(a.status));
+  displayOrders(orders);
+};
 
 const displayOrders = (orders) => {
   orderListContainer.innerHTML = "";
@@ -54,7 +50,7 @@ const displayOrders = (orders) => {
       <div class="order" data-order-id="${order.id}">
           <p>Order ID: ${order.id}</p>
           <p>Customer Name: ${order.customerName}</p>
-          <p>Pancake Type: ${order.selectedPancake}</p>
+          <p id="pancakeType">Pancake Type: ${order.selectedPancake}</p>
           <p>Toppings: ${order.toppings.join(", ")}</p>
           <p>Extras: ${order.extras.join(", ")}</p>
           <p>Delivery Method: ${order.deliveryMethod}</p>
@@ -86,13 +82,13 @@ const displayOrders = (orders) => {
 
 function deleteItem(event) {
   const orderId = event.target.closest("div").dataset.orderId;
-  const index = orders.findIndex((order) => order.id == orderId);
+  const index = orders.findIndex((order) => order.id == orderId && order.status=== "delivered");
 
-  if (index !== -1 && orders.status === "delivered") {
+  if (index !== -1) {
     orders.splice(index, 1);
     localStorage.setItem("ordersNew", JSON.stringify(orders));
     displayOrders(orders);
-  } //does not work
+  } 
 }
 
 const updateOrderStatus = (orderId, newStatus) => {
@@ -115,6 +111,7 @@ orderListContainer.addEventListener("change", (e) => {
 const filterByStatus = () => {
   const selectedType = orderStatus.value;
   if (selectedType === "all") {
+    sortOrders()
     displayOrders(orders);
   } else {
     const filteredOrders = orders.filter(
@@ -132,14 +129,10 @@ const searchOrderbyID = () => {
   displayOrders(filteredOrders);
 };
 
-
 window.onload = () => {
-  sortOrders(); 
-displayOrders(orders)
+  sortOrders();
+  displayOrders(orders);
 };
-
-
 
 orderStatus.addEventListener("change", filterByStatus);
 searchInput.addEventListener("input", searchOrderbyID);
-
