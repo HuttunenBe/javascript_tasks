@@ -82,13 +82,15 @@ const displayOrders = (orders) => {
 
 function deleteItem(event) {
   const orderId = event.target.closest("div").dataset.orderId;
-  const index = orders.findIndex((order) => order.id == orderId && order.status=== "delivered");
+  const index = orders.findIndex(
+    (order) => order.id == orderId && order.status === "delivered"
+  );
 
   if (index !== -1) {
     orders.splice(index, 1);
     localStorage.setItem("ordersNew", JSON.stringify(orders));
     displayOrders(orders);
-  } 
+  }
 }
 
 const updateOrderStatus = (orderId, newStatus) => {
@@ -111,7 +113,7 @@ orderListContainer.addEventListener("change", (e) => {
 const filterByStatus = () => {
   const selectedType = orderStatus.value;
   if (selectedType === "all") {
-    sortOrders()
+    sortOrders();
     displayOrders(orders);
   } else {
     const filteredOrders = orders.filter(

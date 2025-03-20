@@ -10,11 +10,11 @@ const buttonOrderNow = document.querySelector("#orderButton");
 const summaryText = document.querySelector("#orderSummary");
 const customerName = document.querySelector("#customerName");
 
+
 const changeHandler = () => {
   const basePrice = parseFloat(
     document.getElementById("type").selectedOptions[0].dataset.price
   );
-
 
   let selectedToppings = [];
   let selectedExtras = [];
@@ -78,12 +78,13 @@ buttonSeeOrder.addEventListener("click", () => {
 
   const customerOrderName = customerName.value.trim();
 
-  summaryText.textContent = `Hello ${customerOrderName}. 
-  You chose ${pancakeType.value} with the following options:
-  Toppings: ${toppingsText}, 
-  Extras: ${extrasText}, 
-  Delivery: ${deliveryText}. 
-  Total price: ${totalPrice} €`;
+  summaryText.innerHTML = `
+  You chose ${pancakeType.value} with the following options:<br><br>
+  Toppings: ${toppingsText} <br>
+  Extras: ${extrasText} <br>
+  Delivery: ${deliveryText} <br><br>
+  Total price: ${totalPrice} €
+`
 });
 
 buttonOrderNow.addEventListener("click", () => {
@@ -96,35 +97,32 @@ buttonOrderNow.addEventListener("click", () => {
   } = changeHandler();
 
   const customerOrderName = customerName.value.trim();
-  if (customerOrderName == ""){
-    alert("Please input a name")
-  }else{
-  const newOrder = {
-    id: Date.now(),
-    customerName: customerOrderName,
-    selectedPancake: pancakeType.value,
-    toppings: selectedToppings,
-    extras: selectedExtras,
-    deliveryMethod: selectedDelivery,
-    totalPrice: totalPrice,
-    status: "waiting",
-  };
+  if (customerOrderName == "") {
+    alert("Please input your name");
+  } else {
+    const newOrder = {
+      id: Date.now(),
+      customerName: customerOrderName,
+      selectedPancake: pancakeType.value,
+      toppings: selectedToppings,
+      extras: selectedExtras,
+      deliveryMethod: selectedDelivery,
+      totalPrice: totalPrice,
+      status: "waiting",
+    };
 
-  let orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
-  orders.push(newOrder);
-  localStorage.setItem("ordersNew", JSON.stringify(orders));
+    let orders = JSON.parse(localStorage.getItem("ordersNew")) || [];
+    orders.push(newOrder);
+    localStorage.setItem("ordersNew", JSON.stringify(orders));
 
-  alert("Thank you for your order!");
+    alert("Thank you for your order!");
 
-  summaryText.textContent = "";
-  pancakeForm.reset();
-  totalPriceDisplay.textContent = "0 €";
-  totalPriceBanner.textContent = "0 €";
-}});
+    summaryText.textContent = "";
+    pancakeForm.reset();
+    totalPriceDisplay.textContent = "0 €";
+    totalPriceBanner.textContent = "0 €";
+  }
+});
 
 pancakeForm.addEventListener("change", changeHandler);
-
-
 filterType.addEventListener("change", filterByTypeAnimal);
-
-
