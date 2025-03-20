@@ -12,14 +12,14 @@
 - **week_03:**
   - [x] github
   - [x] loops
-  - [x] 8_ball
+  - [x] magib8ball
 - **week_04:**
   - [x] basic_DOM
   - [x] Atm-simulator
-  - [x] pancake_maker1
+  - [x] pancake_step1
 - **week_05:**
-  - [x] array
-  - [x] pancakeMaker2
+  - [x] arrays
+  - [x] pancake_step2
 - **week_06:**
   - [x] little_zoo1
   - [x] little_zoo2
@@ -27,10 +27,14 @@
 - **week_07:**
   - [x] local_storage
   - [x] JSON
-  - [x] pancake_maker3
+  - [x] pancake_step3
  - **week_08:**
-  - [] pancake_maker_extras
   - [x] error_handling
   - [x] fault_finding
   - [x] js_writing_practices
+ - **week_09:**
+  - [x] async
+  - [x] chaining
+  - [x] destructuring
+  - [x] spread_rest
 
