@@ -29,12 +29,10 @@
   - [x] JSON
   - [x] pancake_step3
 - **week_08:**
-  - [ ] 
-
   - [x] error_handling
   - [x] fault_finding
   - [x] js_writing_practices
- - **week_09:**
+- **week_09:**
   - [x] async
   - [x] chaining
   - [x] destructuring
