@@ -61,36 +61,24 @@ Task 5:
 
 function processOrderPromise() {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Order received");
-    }, 2000);
-  });
+    setTimeout(() => resolve("Order received"), 2000);
+  })
+    .then((message) => {
+      console.log(message);
+      return new Promise((resolve) => {
+        setTimeout(() => resolve("Preparing order"), 3000);
+      });
+    })
+    .then((message) => {
+      console.log(message);
+      return new Promise((resolve) => {
+        setTimeout(() => resolve("Order ready for pickup"), 1000);
+      });
+    });
 }
 
-processOrderPromise()
-  .then((status) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("Preparing order");
-      }, 3000);
-    });
-  })
-
-  .then((status) => {
-    console.log(status);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("Order ready for pickup");
-      }, 1000);
-    });
-  })
-
-  .then((status) => {
-    console.log(status);
-  });
-
+// Test Case
 processOrderPromise().then(console.log);
-
 /* 
 Task 6: API Simulation (Promise)  
 ---------------------------------------
