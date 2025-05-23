@@ -1,4 +1,4 @@
-# 🧩 JavaScript Practice Tasks Collection
+# 🧩 JavaScript Tasks Collection
 A collection of JavaScript exercises completed as part of coursework, with the purpose of learning JavaScript through practical exercises.
 
 ### 🛠️ Tech Stack
