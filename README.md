@@ -1,5 +1,12 @@
-## Completed Tasks
+# 🧩 JavaScript Practice Tasks Collection
+A collection of JavaScript exercises completed as part of coursework, with the purpose of learning JavaScript through practical exercises.
 
+### 🛠️ Tech Stack
+* JavaScript
+* HTML5
+* CSS3
+
+### ✅ Included Tasks
 - **week_01**
   - [x] data_types
   - [x] operators
